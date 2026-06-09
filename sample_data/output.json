@@ -1,0 +1,12 @@
+{
+  "examples": [
+    {
+      "id": 1,
+      "initial": "We are aware that some customers are experiencing issues. Our team has been notified and is actively investigating.",
+      "in_progress": "Our team has identified the issue and is working hard to restore full service. We appreciate your patience.",
+      "resolved": "The issue has been fully resolved. All services are back to normal. We sincerely apologize for the inconvenience.",
+      "detected_severity": "high",
+      "tone_used": "empathetic"
+    }
+  ]
+}
