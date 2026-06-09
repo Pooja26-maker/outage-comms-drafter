@@ -1,0 +1,22 @@
+{
+  "examples": [
+    {
+      "id": 1,
+      "technical_text": "DB primary node failed at 14:02, replication lag 200ms, failover initiated, restored at 14:45",
+      "tone": "empathetic",
+      "severity": "high"
+    },
+    {
+      "id": 2,
+      "technical_text": "Payment gateway timeout errors, 500 status codes on checkout endpoint, rollback deployed",
+      "tone": "calm",
+      "severity": "medium"
+    },
+    {
+      "id": 3,
+      "technical_text": "Minor CSS bug on dashboard page, affecting display only, fix pushed",
+      "tone": "concise",
+      "severity": "low"
+    }
+  ]
+}
