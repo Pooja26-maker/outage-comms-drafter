@@ -171,6 +171,3 @@ outage-comms-drafter/
 
 ---
 
-## 🏆 Built For
-
-Infinite Computer Solutions — AI Prototype Challenge 2026
