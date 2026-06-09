@@ -2,6 +2,9 @@
 Test cases for Outage Comms Drafter (happy path)
 Run: pytest tests/test_app.py -v
 """
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 import pytest
 from unittest.mock import patch
 
