@@ -34,7 +34,6 @@ html, body, [class*="css"], .stApp {
     pointer-events: none;
     z-index: 0;
 }
- 
 @keyframes gridMove {
     0% { background-position: 0 0; }
     100% { background-position: 50px 50px; }
@@ -42,234 +41,109 @@ html, body, [class*="css"], .stApp {
  
 /* ANIMATED GRADIENT ORBS */
 .orb1 {
-    position: fixed;
-    width: 700px; height: 700px;
+    position: fixed; width: 700px; height: 700px;
     background: radial-gradient(circle, rgba(124,58,237,0.15), transparent 70%);
-    top: -300px; left: -300px;
-    border-radius: 50%;
+    top: -300px; left: -300px; border-radius: 50%;
     animation: float1 8s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
 }
 .orb2 {
-    position: fixed;
-    width: 500px; height: 500px;
+    position: fixed; width: 500px; height: 500px;
     background: radial-gradient(circle, rgba(6,182,212,0.1), transparent 70%);
-    bottom: -200px; right: -200px;
-    border-radius: 50%;
+    bottom: -200px; right: -200px; border-radius: 50%;
     animation: float2 10s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
 }
 .orb3 {
-    position: fixed;
-    width: 300px; height: 300px;
+    position: fixed; width: 300px; height: 300px;
     background: radial-gradient(circle, rgba(236,72,153,0.08), transparent 70%);
-    top: 50%; left: 50%;
-    border-radius: 50%;
+    top: 50%; left: 50%; border-radius: 50%;
     animation: float3 12s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
 }
+@keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(80px,60px) scale(1.1)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-60px,-40px) scale(1.15)} }
+@keyframes float3 { 0%,100%{transform:translate(-50%,-50%) scale(1)} 33%{transform:translate(-40%,-60%) scale(1.2)} 66%{transform:translate(-60%,-40%) scale(0.9)} }
  
-@keyframes float1 {
-    0%, 100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(80px, 60px) scale(1.1); }
-}
-@keyframes float2 {
-    0%, 100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(-60px, -40px) scale(1.15); }
-}
-@keyframes float3 {
-    0%, 100% { transform: translate(-50%,-50%) scale(1); }
-    33% { transform: translate(-40%,-60%) scale(1.2); }
-    66% { transform: translate(-60%,-40%) scale(0.9); }
-}
- 
-/* HERO SECTION */
-.hero {
-    padding: 5rem 0 2.5rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
+/* HERO */
+.hero { padding: 5rem 0 2.5rem; text-align: center; position: relative; z-index: 1; }
  
 .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    display: inline-flex; align-items: center; gap: 10px;
     background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(6,182,212,0.1));
-    border: 1px solid rgba(124,58,237,0.3);
-    border-radius: 100px;
-    padding: 8px 22px;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: #a78bfa;
-    margin-bottom: 2rem;
-    animation: fadeInDown 0.8s ease forwards;
+    border: 1px solid rgba(124,58,237,0.3); border-radius: 100px;
+    padding: 8px 22px; font-size: 11px; font-weight: 500;
+    letter-spacing: 2.5px; text-transform: uppercase; color: #a78bfa;
+    margin-bottom: 2rem; animation: fadeInDown 0.8s ease forwards;
 }
- 
 .live-dot {
-    width: 7px; height: 7px;
-    background: #22c55e;
-    border-radius: 50%;
-    animation: livePulse 1.5s ease-in-out infinite;
-    box-shadow: 0 0 8px #22c55e;
+    width: 7px; height: 7px; background: #22c55e; border-radius: 50%;
+    animation: livePulse 1.5s ease-in-out infinite; box-shadow: 0 0 8px #22c55e;
 }
- 
-@keyframes livePulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.6; }
-}
+@keyframes livePulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
  
 .hero-title {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 700;
-    line-height: 1.0;
-    letter-spacing: -3px;
-    color: #fff;
-    margin-bottom: 0.8rem;
-    animation: fadeInUp 0.8s ease 0.2s both;
+    font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 700;
+    line-height: 1.0; letter-spacing: -3px; color: #fff;
+    margin-bottom: 0.8rem; animation: fadeInUp 0.8s ease 0.2s both;
 }
- 
 .hero-title .grad {
     background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 50%, #ec4899 100%);
     background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     animation: gradientShift 4s linear infinite;
 }
- 
-@keyframes gradientShift {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-}
- 
+@keyframes gradientShift { 0%{background-position:0% center} 100%{background-position:200% center} }
 .hero-desc {
-    font-size: 1.05rem;
-    color: #4a4668;
-    font-weight: 400;
-    max-width: 500px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.7;
+    font-size: 1.05rem; color: #4a4668; font-weight: 400;
+    max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7;
     animation: fadeInUp 0.8s ease 0.4s both;
 }
- 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
  
 /* STATS */
 .stats {
-    display: flex;
-    justify-content: center;
-    gap: 1px;
+    display: flex; justify-content: center; gap: 1px;
     margin-bottom: 3rem;
-    background: #0f0d1a;
-    border: 1px solid #1a1730;
-    border-radius: 16px;
-    overflow: hidden;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    background: #0f0d1a; border: 1px solid #1a1730; border-radius: 16px;
+    overflow: hidden; width: fit-content; margin-left: auto; margin-right: auto;
     animation: fadeInUp 0.8s ease 0.6s both;
 }
- 
-.stat-item {
-    padding: 1rem 2rem;
-    text-align: center;
-    border-right: 1px solid #1a1730;
-    position: relative;
-}
+.stat-item { padding: 1rem 2rem; text-align: center; border-right: 1px solid #1a1730; }
 .stat-item:last-child { border-right: none; }
- 
 .stat-num {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.5rem; font-weight: 700;
     background: linear-gradient(135deg, #7c3aed, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     line-height: 1.2;
 }
+.stat-txt { font-size: 10px; color: #2e2b42; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 3px; }
  
-.stat-txt {
-    font-size: 10px;
-    color: #2e2b42;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-top: 3px;
+/* AI DETECTING BADGE */
+.ai-detecting {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(124,58,237,0.08);
+    border: 1px solid rgba(124,58,237,0.25);
+    border-radius: 12px; padding: 12px 20px;
+    font-size: 13px; color: #a78bfa; width: 100%;
+    margin-top: 0.5rem;
 }
- 
-/* MAIN PANEL */
-.panel {
-    background: rgba(15,13,26,0.8);
-    border: 1px solid #1a1730;
-    border-radius: 24px;
-    padding: 2rem;
-    backdrop-filter: blur(20px);
-    position: relative;
-    z-index: 1;
-    animation: fadeInUp 0.8s ease 0.8s both;
+.ai-detecting .pulse-ring {
+    width: 10px; height: 10px; background: #7c3aed; border-radius: 50%;
+    animation: livePulse 1.5s ease-in-out infinite; box-shadow: 0 0 8px #7c3aed;
+    flex-shrink: 0;
 }
- 
-.panel::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(124,58,237,0.3), transparent, rgba(6,182,212,0.3));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-}
- 
-.step-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: #7c3aed;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
- 
-.step-label::before {
-    content: '';
-    width: 20px; height: 1px;
-    background: #7c3aed;
-}
- 
-.step-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #e2dff5;
-    margin-bottom: 1rem;
-}
+.ai-detecting .text { display: flex; flex-direction: column; gap: 2px; }
+.ai-detecting .title { font-weight: 600; color: #c4b5fd; font-size: 13px; }
+.ai-detecting .sub { font-size: 11px; color: #4a4668; }
  
 /* INPUTS */
 .stTextArea textarea {
-    background: rgba(5,4,15,0.8) !important;
-    border: 1px solid #1a1730 !important;
-    border-radius: 14px !important;
-    color: #b8b4d4 !important;
-    font-family: 'Space Grotesk', sans-serif !important;
-    font-size: 0.9rem !important;
-    line-height: 1.8 !important;
-    padding: 1.2rem !important;
-    transition: all 0.3s !important;
+    background: rgba(5,4,15,0.8) !important; border: 1px solid #1a1730 !important;
+    border-radius: 14px !important; color: #b8b4d4 !important;
+    font-family: 'Space Grotesk', sans-serif !important; font-size: 0.9rem !important;
+    line-height: 1.8 !important; padding: 1.2rem !important; transition: all 0.3s !important;
 }
 .stTextArea textarea:focus {
     border-color: #7c3aed !important;
@@ -279,10 +153,8 @@ html, body, [class*="css"], .stApp {
 .stTextArea label { display: none !important; }
  
 .stSelectbox > div > div {
-    background: rgba(5,4,15,0.8) !important;
-    border: 1px solid #1a1730 !important;
-    border-radius: 12px !important;
-    color: #b8b4d4 !important;
+    background: rgba(5,4,15,0.8) !important; border: 1px solid #1a1730 !important;
+    border-radius: 12px !important; color: #b8b4d4 !important;
     font-family: 'Space Grotesk', sans-serif !important;
 }
  
@@ -290,138 +162,63 @@ html, body, [class*="css"], .stApp {
 .stButton > button {
     width: 100% !important;
     background: linear-gradient(135deg, #5b21b6, #1e40af, #0e7490) !important;
-    background-size: 200% auto !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: 14px !important;
-    padding: 1rem !important;
-    font-family: 'Space Grotesk', sans-serif !important;
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 1px !important;
-    transition: all 0.3s !important;
-    position: relative !important;
-    overflow: hidden !important;
+    background-size: 200% auto !important; color: #fff !important;
+    border: none !important; border-radius: 14px !important; padding: 1rem !important;
+    font-family: 'Space Grotesk', sans-serif !important; font-size: 1rem !important;
+    font-weight: 600 !important; letter-spacing: 1px !important; transition: all 0.3s !important;
 }
 .stButton > button:hover {
-    background-position: right center !important;
-    transform: translateY(-3px) !important;
+    background-position: right center !important; transform: translateY(-3px) !important;
     box-shadow: 0 15px 50px rgba(91,33,182,0.5), 0 0 30px rgba(6,182,212,0.2) !important;
 }
  
 /* MESSAGE CARDS */
 .msg-wrap {
-    background: rgba(10,8,20,0.9);
-    border-radius: 20px;
-    padding: 1.4rem;
-    border: 1px solid #1a1730;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: cardIn 0.6s ease forwards;
-    position: relative;
-    overflow: hidden;
+    background: rgba(10,8,20,0.9); border-radius: 20px; padding: 1.4rem;
+    border: 1px solid #1a1730; transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+    animation: cardIn 0.6s ease forwards; position: relative; overflow: hidden;
 }
- 
-.msg-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-}
- 
+.msg-wrap::after { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
 .msg-wrap.initial::after { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
 .msg-wrap.progress::after { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
 .msg-wrap.resolved::after { background: linear-gradient(90deg, #10b981, #34d399); }
- 
-.msg-wrap:hover {
-    transform: translateY(-5px) scale(1.01);
-    border-color: #2a2545;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
- 
-@keyframes cardIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+.msg-wrap:hover { transform: translateY(-5px) scale(1.01); border-color: #2a2545; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+@keyframes cardIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
  
 .msg-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 14px;
-    border-radius: 100px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0.7rem;
+    display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px;
+    border-radius: 100px; font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.7rem;
 }
 .chip-initial { background: rgba(245,158,11,0.1); color: #fbbf24; border: 1px solid rgba(245,158,11,0.25); }
 .chip-progress { background: rgba(59,130,246,0.1); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
 .chip-resolved { background: rgba(16,185,129,0.1); color: #34d399; border: 1px solid rgba(16,185,129,0.25); }
  
-.msg-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #e2dff5;
-    margin-bottom: 2px;
-}
-.msg-sub {
-    font-size: 10px;
-    color: #2a2740;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 1rem;
-}
+.msg-title { font-size: 1rem; font-weight: 600; color: #e2dff5; margin-bottom: 2px; }
+.msg-sub { font-size: 10px; color: #2a2740; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; }
  
-/* SUCCESS */
+/* SUCCESS BANNER */
 .success-banner {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: rgba(16,185,129,0.06);
-    border: 1px solid rgba(16,185,129,0.15);
-    border-radius: 16px;
-    padding: 1rem 1.5rem;
-    margin-bottom: 2rem;
-    animation: fadeInDown 0.5s ease;
-    position: relative;
-    z-index: 1;
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.15);
+    border-radius: 16px; padding: 1rem 1.5rem; margin-bottom: 2rem;
+    animation: fadeInDown 0.5s ease; position: relative; z-index: 1;
 }
- 
 .sev-badge {
-    padding: 3px 12px;
-    border-radius: 100px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    padding: 3px 12px; border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
 }
 .sev-low { background: rgba(16,185,129,0.15); color: #34d399; }
 .sev-medium { background: rgba(245,158,11,0.15); color: #fbbf24; }
 .sev-high { background: rgba(239,68,68,0.15); color: #f87171; }
  
-.divline {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #1a1730, transparent);
-    margin: 2.5rem 0;
-    position: relative;
-    z-index: 1;
-}
+.divline { border:none; height:1px; background:linear-gradient(90deg,transparent,#1a1730,transparent); margin:2.5rem 0; position:relative; z-index:1; }
+.footer-txt { text-align:center; font-family:'JetBrains Mono',monospace; font-size:10px; color:#1a1730; letter-spacing:2px; text-transform:uppercase; padding-bottom:2rem; position:relative; z-index:1; }
  
-.footer-txt {
-    text-align: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: #1a1730;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding-bottom: 2rem;
-    position: relative;
-    z-index: 1;
-}
+.step-label { font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#7c3aed; margin-bottom:0.6rem; display:flex; align-items:center; gap:8px; position:relative; z-index:1; }
+.step-label::before { content:''; width:20px; height:1px; background:#7c3aed; }
+.step-title { font-size:1.1rem; font-weight:600; color:#e2dff5; margin-bottom:1rem; position:relative; z-index:1; }
 </style>
  
 <div class="orb1"></div>
@@ -439,49 +236,53 @@ html, body, [class*="css"], .stApp {
         <div class="stat-item"><div class="stat-num">&lt;3s</div><div class="stat-txt">Generation</div></div>
         <div class="stat-item"><div class="stat-num">3×</div><div class="stat-txt">Drafts</div></div>
         <div class="stat-item"><div class="stat-num">AI</div><div class="stat-txt">Agent Loop</div></div>
-        <div class="stat-item"><div class="stat-num">MCP</div><div class="stat-txt">Protocol</div></div>
         <div class="stat-item"><div class="stat-num">Slack</div><div class="stat-txt">Integration</div></div>
     </div>
 </div>
 """, unsafe_allow_html=True)
  
-# INPUT
+# ── INPUT SECTION ──
 col_l, col_r = st.columns([3, 2], gap="large")
  
 with col_l:
-    st.markdown("""
-    <div style="position:relative;z-index:1;">
-        <div class="step-label">Step 01</div>
-        <div class="step-title">Paste Technical Timeline</div>
-    </div>
-    """, unsafe_allow_html=True)
-    timeline = st.text_area("", 
+    st.markdown('<div class="step-label">Step 01</div>', unsafe_allow_html=True)
+    st.markdown('<div class="step-title">Paste Technical Timeline</div>', unsafe_allow_html=True)
+    timeline = st.text_area("",
         placeholder="14:02 — Payment gateway returning 500 errors on checkout\n14:18 — Root cause: DB connection pool exhausted\n14:35 — Fix deployed, monitoring in progress\n14:52 — All systems back to normal",
         height=220, label_visibility="collapsed")
  
 with col_r:
+    st.markdown('<div class="step-label">Step 02</div>', unsafe_allow_html=True)
+    st.markdown('<div class="step-title">Configure Output</div>', unsafe_allow_html=True)
+ 
+    tone = st.selectbox("Tone", ["Empathetic", "Calm", "Concise"],
+        help="Empathetic = warm & caring | Calm = neutral | Concise = brief & direct")
+ 
+    # AI Auto-detecting severity
     st.markdown("""
-    <div style="position:relative;z-index:1;">
-        <div class="step-label">Step 02</div>
-        <div class="step-title">Configure Output</div>
+    <div class="ai-detecting">
+        <div class="pulse-ring"></div>
+        <div class="text">
+            <div class="title">🤖 AI Auto-Detects Severity</div>
+            <div class="sub">No manual input needed — AI reads your timeline and classifies LOW / MEDIUM / HIGH</div>
+        </div>
     </div>
     """, unsafe_allow_html=True)
-    tone = st.selectbox("Tone", ["Empathetic", "Calm", "Concise"])
-    severity = st.selectbox("Severity", ["Auto Detect", "Low", "Medium", "High"])
+ 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown('<div class="step-label" style="position:relative;z-index:1;">Step 03</div>', unsafe_allow_html=True)
     generate_clicked = st.button("⚡  Generate Customer Drafts", use_container_width=True)
  
 st.markdown('<hr class="divline">', unsafe_allow_html=True)
  
+# ── GENERATE ──
 if generate_clicked:
     if not timeline.strip():
         st.error("Please enter a technical timeline first.")
     else:
-        with st.spinner("AI agent analyzing and self-correcting drafts..."):
+        with st.spinner("🤖 AI agent analyzing severity and generating drafts..."):
             try:
-                sev_input = None if severity == "Auto Detect" else severity.lower()
-                results, detected_severity = agent_loop(timeline, tone.lower(), sev_input)
+                results, detected_severity = agent_loop(timeline, tone.lower(), None)
                 data = {
                     "initial": results.get("initial", ""),
                     "in_progress": results.get("in-progress", ""),
@@ -495,7 +296,7 @@ if generate_clicked:
                     <span style="color:#34d399;font-size:1.2rem">✦</span>
                     <span style="color:#34d399;font-weight:600">3 drafts generated</span>
                     <span style="color:#1a1730">·</span>
-                    <span style="color:#4a4668">Severity</span>
+                    <span style="color:#4a4668">AI Detected Severity</span>
                     <span class="sev-badge {sev_cls}">{sev.upper()}</span>
                     <span style="color:#1a1730">·</span>
                     <span style="color:#4a4668">Tone: <strong style="color:#a78bfa">{tone}</strong></span>
