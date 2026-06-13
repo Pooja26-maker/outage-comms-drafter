@@ -4,7 +4,6 @@
 - Writing 70% of boilerplate code (Streamlit UI, agent loop)
 - Debugging errors quickly (quota errors, import errors)
 - Writing prompt templates for tone-controlled generation
-- Suggesting MCP tool structure
 - Writing test cases
 
 ## What AI Got Wrong
