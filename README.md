@@ -1,6 +1,6 @@
 # 🚨 Outage Comms Drafter — AI-Powered Customer Communication Tool
 
-> Auto-generate customer-facing outage messages from raw technical descriptions using AI Agent + MCP.
+> Auto-generate customer-facing outage messages from raw technical descriptions using AI Agent.
 
 ---
 
@@ -23,9 +23,6 @@ The AI agent automatically:
 
 ```
 Streamlit UI (app.py)
-        │
-        ▼
-MCP Tool (mcp_tool.py)
         │
         ▼
 AI Agent Loop (agent.py)
@@ -78,10 +75,6 @@ streamlit run app.py
 ```
 Open [http://localhost:8501](http://localhost:8501) in your browser.
 
-### Run the MCP Tool
-```bash
-python mcp_tool.py
-```
 
 ### Run Tests
 ```bash
@@ -105,23 +98,12 @@ Our AI agent does NOT just call the API once — it self-corrects:
 
 ---
 
-## 🔧 MCP Tools Exposed
-
-| Tool | Description |
-|------|-------------|
-| `generate_outage_message` | Takes technical input → returns 3 customer drafts |
-| `get_tone_options` | Returns available tone options |
-| `get_severity_levels` | Returns available severity levels |
-
----
-
 ## 📂 Project Structure
 
 ```
 outage-comms-drafter/
 ├── app.py                  # Streamlit web UI
 ├── agent.py                # AI agent loop + Groq integration
-├── mcp_tool.py             # Custom MCP tool
 ├── slack_integration.py    # Slack API integration
 ├── requirements.txt        # Python dependencies
 ├── prompts.md              # Key prompts used
@@ -153,7 +135,6 @@ outage-comms-drafter/
 |----------|------|
 | UI | Streamlit |
 | AI Model | Groq — LLaMA 3.1 8B |
-| MCP Protocol | FastMCP by Anthropic |
 | API Integration | Slack SDK |
 | Testing | Pytest |
 | Source Control | GitHub |
@@ -166,8 +147,7 @@ outage-comms-drafter/
 |--------|------|
 | Member 1 | Streamlit UI |
 | Member 2 | AI Agent Loop + Groq Integration |
-| Member 3 | Custom MCP Tool |
-| Member 4 | Slack Integration + Docs + Tests |
+| Member 3 | Slack Integration  |
+| Member 4 | Docs + Tests |
 
 ---
-
