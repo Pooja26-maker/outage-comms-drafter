@@ -1,8 +1,5 @@
 streamlit
 groq
 python-dotenv
-mcp
-fastapi
-uvicorn
 slack-sdk
 pytest
